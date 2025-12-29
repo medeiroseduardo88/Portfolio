@@ -122,7 +122,11 @@
         <div class="modal-conteudo">
             <span class="fechar-modal" onclick="fecharModal()">&times;</span>
 
-            <h3>Projeto 1</h3>
+            <h3>Projeto 1 - Portfólio</h3>
+
+            <p class="descricao-projeto">
+            Projeto desenvolvido em HTML e CSS desenvolvendo o próprio Portfólio.
+        </p>
 
             <div class="galeria">
                 <img src="./img/Eduardo.jpeg" alt="Imagem 1">
@@ -161,7 +165,7 @@
                 return;
             }
 
-            const texto = `Olá, me chamo ${nome}, ${mensagem}`;
+            const texto = `Olá, me chamo ${nome}, ${mensagem}!`;
             const msgFormatada = encodeURIComponent(texto);
             const url = `https://wa.me/5511969892900?text=${msgFormatada}`;
 
