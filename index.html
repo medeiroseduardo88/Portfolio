@@ -13,12 +13,6 @@
     <!-- ================= ESTILOS ================= -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- ================= SCRIPTS (JS) ================= -->
-    <!-- OBS: Está aqui apenas para organização visual.
-         O navegador ignora esse arquivo por estar como CSS,
-         mas o site continua funcionando normalmente -->
-    <link rel="stylesheet" href="script.js">
-
     <!-- ================= ÍCONES ================= -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -65,14 +59,17 @@
         <h2 class="projetos-titulo">Meus Projetos</h2>
 
         <div class="projetos-caixa">
+
             <!-- Card de projeto -->
-            <div class="caixa-textos-projeto">
-                <div class="projetos-card">
-                    <img src="./img/Eduardo.jpeg" class="projeto-imagem" alt="Imagem do projeto 1">
+            <div class="projetos-card" onclick="abrirModal()">
+                <img src="./img/Eduardo.jpeg" class="projeto-imagem" alt="Imagem do projeto 1">
+
+                <div class="conteudo-projeto">
                     <h3 class="info-projetos">Projeto 1</h3>
                     <p class="paragrafo-projetos">Descrição do Projeto 1.</p>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -80,8 +77,7 @@
     <section id="contatos" class="contatos">
         <h2 class="contatos-titulo">Entre em Contato</h2>
 
-        <!-- Formulário de contato -->
-        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+        <form class="formulario-contato" onsubmit="enviarWhats(event)">
             <div class="grupo-form">
                 <label for="nome" class="sr-only">Nome</label>
                 <input placeholder="Digite seu nome" class="campo-form" id="nome" required>
@@ -97,8 +93,63 @@
         </form>
     </section>
 
-    <!-- ================= SCRIPT INLINE ================= -->
+    <!-- ================= RODAPÉ ================= -->
+    <footer>
+        <h3>Conecte-se comigo</h3>
+
+        <div class="social-links">
+            <a href="https://github.com/medeiroseduardo88" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/eduardo-medeiros-raposo-66579b193/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a href="https://www.instagram.com/medeiroseduardo/" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="livro/Eduardo Medeiros - Curriculo.pdf" download class="btn-flutuante"
+                title="Baixar Currículo">
+                <i class="fas fa-download"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- ================= MODAL DO PROJETO ================= -->
+    <div class="modal-projeto" id="modalProjeto">
+        <div class="modal-conteudo">
+            <span class="fechar-modal" onclick="fecharModal()">&times;</span>
+
+            <h3>Projeto 1</h3>
+
+            <div class="galeria">
+                <img src="./img/Eduardo.jpeg" alt="Imagem 1">
+                <img src="./img/Eduardo.jpeg" alt="Imagem 2">
+                <img src="./img/Eduardo.jpeg" alt="Imagem 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
     <script>
+        const modal = document.getElementById('modalProjeto');
+
+        function abrirModal() {
+            modal.style.display = 'flex';
+        }
+
+        function fecharModal() {
+            modal.style.display = 'none';
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                fecharModal();
+            }
+        });
+
         function enviarWhats(event) {
             event.preventDefault();
 
@@ -117,34 +168,6 @@
             window.open(url, '_blank', 'noopener');
         }
     </script>
-
-    <!-- ================= RODAPÉ ================= -->
-    <footer>
-        <h3>Conecte-se comigo</h3>
-
-        <div class="social-links">
-            <!-- GitHub -->
-            <a href="https://github.com/medeiroseduardo88" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/eduardo-medeiros-raposo-66579b193/" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/medeiroseduardo/" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-            <!-- Download Currículo -->
-            <a href="livro/Eduardo Medeiros - Curriculo.pdf" download class="btn-flutuante"
-                title="Baixar Currículo">
-                <i class="fas fa-download"></i>
-            </a>
-        </div>
-    </footer>
 
 </body>
 

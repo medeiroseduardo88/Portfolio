@@ -165,6 +165,7 @@ h1 {
     overflow: hidden;
     cursor: pointer;
     transition: all 0.5s ease;
+    padding: 1rem;
 }
 
 .projetos-card:hover {
@@ -342,4 +343,55 @@ footer {
         opacity: 0;
         transform: translate(-50%, -50%) scale(2);
     }
+}
+
+/* FUNDO DO MODAL */
+.modal-projeto {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* CAIXA DO MODAL */
+.modal-conteudo {
+    background: #1e1e2f;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* BOTÃO FECHAR */
+.fechar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* GALERIA */
+.galeria {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
 }
