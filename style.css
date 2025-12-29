@@ -1,3 +1,6 @@
+/* =====================================================
+   RESET / CONFIGURAÇÕES GLOBAIS
+===================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +12,9 @@ html {
     scroll-behavior: smooth;
 }
 
+/* =====================================================
+   VARIÁVEIS DE CORES
+===================================================== */
 :root {
     --primaria: #FF6B6B;
     --secundaria: #FFD93D;
@@ -18,11 +24,17 @@ html {
     --vidro: rgba(255, 255, 255, 0.1);
 }
 
+/* =====================================================
+   BODY / FUNDO GERAL
+===================================================== */
 body {
     background-color: var(--escuro);
     color: var(--claro);
 }
 
+/* =====================================================
+   NAVEGAÇÃO
+===================================================== */
 .navegacao {
     position: fixed;
     background: rgba(30, 30, 47, 0.8);
@@ -61,6 +73,9 @@ body {
     width: 100%;
 }
 
+/* =====================================================
+   CABEÇALHO / HERO
+===================================================== */
 .cabecalho {
     min-height: 100vh;
     display: flex;
@@ -69,17 +84,15 @@ body {
     align-items: center;
     text-align: center;
     gap: 15px;
-    margin: 0;
-    padding: 0;
 }
 
 .foto-perfil {
     width: 350px;
     height: 290px;
     object-fit: cover;
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
     border-radius: 50%;
     border: 4px solid var(--vidro);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
     animation: flutuar 5s ease-in-out infinite;
 }
 
@@ -95,21 +108,23 @@ h1 {
     color: var(--vidro);
 }
 
+/* =====================================================
+   SEÇÃO SOBRE
+===================================================== */
 .sobre {
     padding: 6rem 2rem;
 }
 
 .sobre-titulo {
     font-size: 3rem;
-    color: var(--claro);
     text-align: center;
     margin-bottom: 20px;
 }
 
 .sobre-caixa {
-    padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
+    padding: 2rem;
     border-radius: 16px;
     border: 1px solid var(--vidro);
     backdrop-filter: blur(10px);
@@ -121,6 +136,9 @@ h1 {
     margin-bottom: 3rem;
 }
 
+/* =====================================================
+   SEÇÃO PROJETOS
+===================================================== */
 .projetos {
     padding: 6rem 2rem;
 }
@@ -132,31 +150,31 @@ h1 {
 }
 
 .projetos-caixa {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .projetos-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
-    backdrop-filter: blur(5px);
     border: 1px solid var(--vidro);
+    backdrop-filter: blur(5px);
     overflow: hidden;
-    transition: all 0.5s ease;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 
 .projetos-card:hover {
-    box-shadow: 0 10px 20px rgba(255, 217, 61, 0.2);
     transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(255, 217, 61, 0.2);
 }
 
 .projeto-imagem {
-    height: 200px;
     width: 100%;
+    height: 200px;
     object-fit: cover;
 }
 
@@ -169,6 +187,9 @@ h1 {
     line-height: 1.25rem;
 }
 
+/* =====================================================
+   SEÇÃO CONTATO
+===================================================== */
 .contatos {
     padding: 6rem 2rem;
 }
@@ -182,20 +203,24 @@ h1 {
 .formulario-contato {
     max-width: 600px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
     padding: 2rem;
-    border: 1px solid var(--vidro);
     border-radius: 16px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
 }
 
 .campo-form {
     width: 100%;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
-    color: var(--claro);
     border: 1px solid var(--vidro);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--claro);
     outline: none;
     resize: none;
 }
@@ -205,19 +230,15 @@ h1 {
     box-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
 }
 
-.grupo-form {
-    margin-bottom: 1.5rem;
-}
-
 .botao-form {
-    color: var(--claro);
-    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    width: 100%;
     padding: 1rem 2rem;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
     font-weight: bold;
-    width: 100%;
+    cursor: pointer;
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
     transition: all 0.5s ease;
 }
 
@@ -226,12 +247,12 @@ h1 {
     box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
 }
 
+/* =====================================================
+   FUNDO / PARTÍCULAS
+===================================================== */
 .particulas {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: -1;
     opacity: 0.5;
     background:
@@ -240,18 +261,9 @@ h1 {
         var(--maisEscuro);
 }
 
-@keyframes flutuar {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
+/* =====================================================
+   RODAPÉ
+===================================================== */
 footer {
     background-color: #1e1e2f;
     color: white;
@@ -261,35 +273,37 @@ footer {
 }
 
 .social-links a {
-    color: white;
     margin: 0 15px;
     font-size: 28px;
-    transition: color 0.3s;
+    color: white;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 .social-links a:hover {
     color: #ff6f61;
-
 }
 
+/* =====================================================
+   BOTÃO FLUTUANTE (CURRÍCULO)
+===================================================== */
 .btn-flutuante {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #FF6B6B;
-    color: white;
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    background-color: #FF6B6B;
+    color: white;
+    font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s, transform 0.3s;
     z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     animation: flutuar 3s ease-in-out infinite;
+    transition: background 0.3s, transform 0.3s;
 }
 
 .btn-flutuante:hover {
@@ -297,6 +311,9 @@ footer {
     transform: translateY(-5px) scale(1.1);
 }
 
+/* =====================================================
+   PARTÍCULAS DO MOUSE
+===================================================== */
 .particula-mouse {
     position: absolute;
     width: 8px;
@@ -308,6 +325,21 @@ footer {
     animation: desaparecer 0.5s forwards;
 }
 
+/* =====================================================
+   ANIMAÇÕES
+===================================================== */
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
 @keyframes desaparecer {
-    to { opacity: 0; transform: translate(-50%, -50%) scale(2); }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+    }
 }
