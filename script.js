@@ -1,60 +1,100 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Efeito digitação
-    const elemento = document.querySelector('.cabecalho-subtitulo');
-    const texto = "Analista de Dados";
-    let i = 0;
+    // =============================
+    // 1. EFEITO DIGITAÇÃO
+    // =============================
+    const elementoAlvo = document.querySelector('.cabecalho-subtitulo');
+    const textoParaDigitar = "Analista de Dados";
+    let charIndex = 0;
     let apagando = false;
 
     function escrever() {
+        if (!elementoAlvo) return;
+
         if (!apagando) {
-            elemento.textContent = texto.substring(0, i++);
-            if (i > texto.length) {
+            elementoAlvo.textContent = textoParaDigitar.substring(0, charIndex++);
+            if (charIndex > textoParaDigitar.length) {
                 apagando = true;
                 setTimeout(escrever, 1500);
                 return;
             }
         } else {
-            elemento.textContent = texto.substring(0, i--);
-            if (i < 0) apagando = false;
+            elementoAlvo.textContent = textoParaDigitar.substring(0, charIndex--);
+            if (charIndex < 0) {
+                apagando = false;
+            }
         }
 
-        setTimeout(escrever, apagando ? 70 : 120);
+        setTimeout(escrever, apagando ? 80 : 120);
     }
 
     escrever();
 
-    // Dark / Light Mode
-    const toggle = document.getElementById('theme-toggle');
-    const icon = document.getElementById('theme-icon');
+    // =============================
+    // 2. DARK / LIGHT MODE
+    // =============================
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
 
-    toggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
+    if (themeToggle && themeIcon) {
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
 
-        if (document.body.classList.contains('light-mode')) {
-            icon.classList.replace('fa-moon', 'fa-sun');
-        } else {
-            icon.classList.replace('fa-sun', 'fa-moon');
-        }
-    });
+            if (body.classList.contains('light-mode')) {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+    }
 
-    // Modal
+    // =============================
+    // 3. MODAL
+    // =============================
     const modal = document.getElementById('modalProjeto');
 
-    window.abrirModal = () => modal.style.display = 'flex';
-    window.fecharModal = () => modal.style.display = 'none';
+    if (modal) {
 
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) fecharModal();
+        window.abrirModal = function () {
+            modal.style.display = 'flex';
+        };
+
+        window.fecharModal = function () {
+            modal.style.display = 'none';
+        };
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                window.fecharModal();
+            }
+        });
+    }
+
+    // =============================
+    // 4. BLOQUEIO PROPAGAÇÃO
+    // =============================
+    const links = document.querySelectorAll('.projeto-links a');
+    links.forEach(link => {
+        link.addEventListener('click', (e) => e.stopPropagation());
     });
+
 });
 
-// WhatsApp
+
+// =============================
+// 5. WHATSAPP
+// =============================
 function enviarWhats(event) {
     event.preventDefault();
 
-    const nome = document.getElementById('nome').value.trim();
-    const mensagem = document.getElementById('mensagem').value.trim();
+    const nomeInput = document.getElementById('nome');
+    const mensagemInput = document.getElementById('mensagem');
+
+    if (!nomeInput || !mensagemInput) return;
+
+    const nome = nomeInput.value.trim();
+    const mensagem = mensagemInput.value.trim();
 
     if (!nome || !mensagem) {
         alert("Preencha todos os campos.");
@@ -64,5 +104,5 @@ function enviarWhats(event) {
     const texto = `Olá Eduardo! Me chamo ${nome}. ${mensagem}`;
     const url = `https://wa.me/5511969892900?text=${encodeURIComponent(texto)}`;
 
-    window.open(url, '_blank');
+    window.open(url, '_blank', 'noopener');
 }

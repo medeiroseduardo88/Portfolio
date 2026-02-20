@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
     <button id="theme-toggle" class="btn-tema" aria-label="Alternar tema">
         <i id="theme-icon" class="fas fa-moon"></i>
     </button>
@@ -25,7 +26,6 @@
             <li><a href="#contatos" class="menu-link">Contatos</a></li>
         </ul>
     </nav>
-    </nav>
 
     <!-- ================= CABEÇALHO / HERO ================= -->
     <main id="inicio" class="cabecalho">
@@ -35,7 +35,6 @@
             <p class="cabecalho-subtitulo">Analista de Dados</p>
         </div>
     </main>
-
 
     <!-- ================= SOBRE ================= -->
     <section id="sobre" class="sobre">
@@ -50,7 +49,7 @@
         </div>
     </section>
 
-    <!-- ================= PROJETOS ================= -->
+    <!-- ================= EXPERIÊNCIA ================= -->
     <section id="experiencia" class="experiencia">
         <h2 class="experiencia-titulo">Trajetória Profissional</h2>
         <div class="linha-do-tempo">
@@ -80,31 +79,30 @@
         </div>
     </section>
 
+    <!-- ================= PROJETOS ================= -->
     <section id="projetos" class="projetos">
         <h2 class="projetos-titulo">Meus Projetos</h2>
 
         <div class="projetos-caixa">
 
-            <!-- Card de projeto -->
             <div class="projetos-card" onclick="abrirModal()">
                 <img src="./img/Eduardo.jpeg" class="projeto-imagem" alt="Imagem do projeto 1">
 
                 <div class="conteudo-projeto">
                     <h3 class="info-projetos">Projeto 1 - Portfólio</h3>
-                    <p class="paragrafo-projetos">Utilizando HTML, CSS e JavaScript para desenvolver um portfólio
-                        profissional.</p>
+                    <p class="paragrafo-projetos">
+                        Utilizando HTML, CSS e JavaScript para desenvolver um portfólio profissional.
+                    </p>
 
                     <div class="projeto-links">
                         <a href="https://github.com/medeiroseduardo88/Portfolio" target="_blank" class="btn-projeto">
                             <i class="fab fa-github"></i> Repositório
                         </a>
-                        <!-- <a href="LINK_DO_DASHBOARD" target="_blank" class="btn-projeto-link">
-                            <i class="fas fa-external-link-alt"></i> Live Demo -->
-                        </a>
                     </div>
                 </div>
-
             </div>
+
+        </div>
     </section>
 
     <!-- ================= CONTATO ================= -->
@@ -119,8 +117,7 @@
 
             <div class="grupo-form">
                 <label for="mensagem" class="sr-only">Mensagem</label>
-                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem"
-                    required></textarea>
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem" required></textarea>
             </div>
 
             <button type="submit" class="botao-form">Enviar</button>
@@ -150,7 +147,7 @@
         </div>
     </footer>
 
-    <!-- ================= MODAL DO PROJETO ================= -->
+    <!-- ================= MODAL ================= -->
     <div class="modal-projeto" id="modalProjeto">
         <div class="modal-conteudo">
             <span class="fechar-modal" onclick="fecharModal()">&times;</span>
@@ -169,8 +166,8 @@
         </div>
     </div>
 
-
+    <!-- IMPORTAÇÃO DO JS -->
+    <script src="script.js"></script>
 
 </body>
-
 </html>
