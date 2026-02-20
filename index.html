@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <!-- ================= META / SEO ================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Eduardo Medeiros | Portfólio</title>
-    <meta name="description"
-        content="Portfólio de Eduardo Medeiros - Analista de Dados. Veja meus projetos e entre em contato.">
-
-    <!-- ================= ESTILOS ================= -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- ================= ÍCONES ================= -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-
+    <button id="theme-toggle" class="btn-tema" aria-label="Alternar tema">
+        <i id="theme-icon" class="fas fa-moon"></i>
+    </button>
+    
     <!-- ================= FUNDO / PARTÍCULAS ================= -->
     <div class="particulas"></div>
 
@@ -27,9 +20,11 @@
         <ul class="menu">
             <li><a href="#inicio" class="menu-link">Início</a></li>
             <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#experiencia" class="menu-link">Experiência</a></li>
             <li><a href="#projetos" class="menu-link">Projetos</a></li>
             <li><a href="#contatos" class="menu-link">Contatos</a></li>
         </ul>
+    </nav>
     </nav>
 
     <!-- ================= CABEÇALHO / HERO ================= -->
@@ -40,6 +35,7 @@
             <p class="cabecalho-subtitulo">Analista de Dados</p>
         </div>
     </main>
+
 
     <!-- ================= SOBRE ================= -->
     <section id="sobre" class="sobre">
@@ -55,6 +51,35 @@
     </section>
 
     <!-- ================= PROJETOS ================= -->
+    <section id="experiencia" class="experiencia">
+        <h2 class="experiencia-titulo">Trajetória Profissional</h2>
+        <div class="linha-do-tempo">
+
+            <div class="exp-item">
+                <div class="exp-ponto"></div>
+                <div class="exp-conteudo">
+                    <span class="exp-data">Setembro 2025 - Presente</span>
+                    <h3>Analista de Infraestrutura / Estagiário</h3>
+                    <h4>Hospital Sagrada Família</h4>
+                    <p>Desenvolvimento de dashboards automatizados e limpeza de bases de dados utilizando Python.
+                        Redução de 15% no tempo de geração de relatórios mensais.</p>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-ponto"></div>
+                <div class="exp-conteudo">
+                    <span class="exp-data">Março 2021 - Setembro 2025</span>
+                    <h3>Auxiliar de Logistica</h3>
+                    <h4>Mancini Cabos</h4>
+                    <p>Otimização de planilhas de controle de estoque no Excel, facilitando a visualização de KPIs para
+                        a gerência.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section id="projetos" class="projetos">
         <h2 class="projetos-titulo">Meus Projetos</h2>
 
@@ -66,14 +91,15 @@
 
                 <div class="conteudo-projeto">
                     <h3 class="info-projetos">Projeto 1 - Portfólio</h3>
-                    <p class="paragrafo-projetos">Utilizando HTML, CSS e JavaScript para desenvolver um portfólio profissional.</p>
+                    <p class="paragrafo-projetos">Utilizando HTML, CSS e JavaScript para desenvolver um portfólio
+                        profissional.</p>
 
                     <div class="projeto-links">
-                        <a href="LINK_DO_GITHUB" target="_blank" class="btn-projeto">
+                        <a href="https://github.com/medeiroseduardo88/Portfolio" target="_blank" class="btn-projeto">
                             <i class="fab fa-github"></i> Repositório
                         </a>
-                        <a href="LINK_DO_DASHBOARD" target="_blank" class="btn-projeto-link">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        <!-- <a href="LINK_DO_DASHBOARD" target="_blank" class="btn-projeto-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo -->
                         </a>
                     </div>
                 </div>
@@ -143,42 +169,7 @@
         </div>
     </div>
 
-    <!-- ================= SCRIPTS ================= -->
-    <script>
-        const modal = document.getElementById('modalProjeto');
 
-        function abrirModal() {
-            modal.style.display = 'flex';
-        }
-
-        function fecharModal() {
-            modal.style.display = 'none';
-        }
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                fecharModal();
-            }
-        });
-
-        function enviarWhats(event) {
-            event.preventDefault();
-
-            const nome = document.getElementById('nome').value.trim();
-            const mensagem = document.getElementById('mensagem').value.trim();
-
-            if (!nome || !mensagem) {
-                alert("Por favor, preencha todos os campos.");
-                return;
-            }
-
-            const texto = `Olá, me chamo ${nome}, ${mensagem}!`;
-            const msgFormatada = encodeURIComponent(texto);
-            const url = `https://wa.me/5511969892900?text=${msgFormatada}`;
-
-            window.open(url, '_blank', 'noopener');
-        }
-    </script>
 
 </body>
 

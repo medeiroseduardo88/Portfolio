@@ -442,3 +442,181 @@ footer {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 217, 61, 0.3);
 }
+
+.experiencia {
+    padding: 6rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.experiencia-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.linha-do-tempo {
+    border-left: 2px solid var(--primaria);
+    margin-left: 20px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.exp-item {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* A bolinha na linha do tempo */
+.exp-ponto {
+    width: 15px;
+    height: 15px;
+    background: var(--secundaria);
+    border-radius: 50%;
+    position: absolute;
+    left: -39px;
+    top: 5px;
+    box-shadow: 0 0 10px var(--secundaria);
+}
+
+.exp-conteudo {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--vidro);
+    transition: 0.3s;
+}
+
+.exp-conteudo:hover {
+    transform: translateX(10px);
+    border-color: var(--primaria);
+}
+
+.exp-data {
+    color: var(--primaria);
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.exp-conteudo h3 {
+    color: var(--claro);
+    margin-bottom: 5px;
+}
+
+.exp-conteudo h4 {
+    color: var(--secundaria);
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.exp-conteudo p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(224, 224, 224, 0.8);
+}
+
+.cabecalho-subtitulo {
+    font-size: 2rem;
+    min-height: 2.5rem; /* Evita que o resto da página "pule" quando o texto sumir */
+    color: var(--claro);
+}
+
+#efeito-texto {
+    color: var(--primaria); /* Deixa "Analista de Dados" com a cor principal */
+    font-weight: bold;
+}
+
+.cursor-piscando {
+    border-right: 3px solid var(--secundaria);
+    padding-right: 5px;
+    animation: piscar 0.8s infinite;
+}
+
+@keyframes piscar {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: var(--secundaria); }
+}
+
+.cabecalho-subtitulo {
+    font-size: 2rem;
+    color: var(--primaria) !important; /* Cor sólida para você enxergar! */
+    font-weight: bold;
+    min-height: 2.5rem;
+    display: block;
+}
+
+/* Criando o cursor piscando diretamente na classe */
+.cabecalho-subtitulo::after {
+    content: '|';
+    margin-left: 5px;
+    animation: pisca-cursor 0.8s infinite;
+}
+
+@keyframes pisca-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 1. Definições de Variáveis (Root = Dark Mode por padrão) */
+:root {
+    --primaria: #FF6B6B;      /* Tom avermelhado/coral */
+    --secundaria: #FFD93D;    /* Amarelo */
+    --escuro: #1E1E2F;        /* Fundo dark */
+    --maisEscuro: #12121F;    /* Fundo profundo */
+    --claro: #FFFFFF;         /* Texto no modo dark */
+    --vidro: rgba(255, 255, 255, 0.1);
+    --transicao: 0.4s ease;
+}
+
+/* 2. Variáveis para o Modo Claro */
+body.light-mode {
+    --escuro: #F4F4F9;        /* Fundo claro acinzentado */
+    --maisEscuro: #E0E0E0;    /* Elementos de fundo */
+    --claro: #1E1E2F;         /* Texto escuro para leitura */
+    --vidro: rgba(0, 0, 0, 0.05);
+}
+
+/* 3. Suavidade na troca de cores */
+body {
+    background-color: var(--maisEscuro);
+    color: var(--claro);
+    transition: background-color var(--transicao), color var(--transicao);
+}
+
+/* 4. Estilo do Botão de Alternância */
+.btn-tema {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000; /* Acima de tudo */
+    background: var(--vidro);
+    border: 2px solid var(--primaria);
+    color: var(--primaria);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-tema:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: var(--primaria);
+    color: white;
+}
+
+/* Ajuste nos Cards para refletirem as variáveis */
+.projeto-card, .exp-conteudo, .formulario-contato {
+    background: var(--vidro);
+    border: 1px solid var(--vidro);
+    color: var(--claro);
+    transition: background var(--transicao), border var(--transicao);
+}
