@@ -620,3 +620,29 @@ body {
     color: var(--claro);
     transition: background var(--transicao), border var(--transicao);
 }
+
+/* MODAL IMAGEM FULLSCREEN */
+.modal-imagem {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-imagem img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+.fechar-imagem {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}

@@ -106,3 +106,24 @@ function enviarWhats(event) {
 
     window.open(url, '_blank', 'noopener');
 }
+
+// =============================
+// MODAL IMAGEM FULLSCREEN
+// =============================
+function abrirImagem(img) {
+    const modal = document.getElementById("modalImagem");
+    const imagemExpandida = document.getElementById("imagemExpandida");
+
+    imagemExpandida.src = img.src;
+    modal.style.display = "flex";
+}
+
+document.querySelector(".fechar-imagem").onclick = function () {
+    document.getElementById("modalImagem").style.display = "none";
+};
+
+document.getElementById("modalImagem").onclick = function (e) {
+    if (e.target.id === "modalImagem") {
+        this.style.display = "none";
+    }
+};
