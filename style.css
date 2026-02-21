@@ -402,7 +402,7 @@ footer {
     display: flex;
     gap: 10px;
     margin-top: 15px;
-    flex-wrap: wrap; /* Garante que os botões quebrem linha no celular */
+    flex-wrap: wrap; 
 }
 
 .btn-projeto {
@@ -520,12 +520,12 @@ footer {
 
 .cabecalho-subtitulo {
     font-size: 2rem;
-    min-height: 2.5rem; /* Evita que o resto da página "pule" quando o texto sumir */
+    min-height: 2.5rem; 
     color: var(--claro);
 }
 
 #efeito-texto {
-    color: var(--primaria); /* Deixa "Analista de Dados" com a cor principal */
+    color: var(--primaria);
     font-weight: bold;
 }
 
@@ -645,4 +645,37 @@ body {
     font-size: 40px;
     color: white;
     cursor: pointer;
+}
+
+/* =====================================================
+   SEÇÃO TECNOLOGIAS
+===================================================== */
+.tecnologias {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.tecnologias-grid {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    
+}
+
+.tecnologias-grid img {
+    width: 60px;
+    transition: 0.3s ease;
+    color: var(--claro);
+}
+
+.tecnologias-grid img:hover {
+    transform: scale(1.15);
+}
+
+.tecnologias-titulo {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
