@@ -127,3 +127,7 @@ document.getElementById("modalImagem").onclick = function (e) {
         this.style.display = "none";
     }
 };
+
+document.addEventListener("mousemove", (e) => {
+    const before = document.querySelector("body::before");
+});
