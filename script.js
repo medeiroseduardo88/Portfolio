@@ -131,3 +131,65 @@ document.getElementById("modalImagem").onclick = function (e) {
 document.addEventListener("mousemove", (e) => {
     const before = document.querySelector("body::before");
 });
+
+
+        tsParticles.load("tsparticles", {
+            background: {
+                color: "transparent"
+            },
+            fpsLimit: 60,
+            interactivity: {
+                events: {
+                    onHover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onClick: {
+                        enable: true,
+                        mode: "push"
+                    }
+                },
+                modes: {
+                    repulse: {
+                        distance: 120,
+                        duration: 0.4
+                    },
+                    push: {
+                        quantity: 4
+                    }
+                }
+            },
+            particles: {
+                number: {
+                    value: 40,
+                    density: {
+                        enable: true,
+                        area: 800
+                    }
+                },
+                color: {
+                    value: "#00bfff"
+                },
+                links: {
+                    enable: true,
+                    color: "#00bfff",
+                    distance: 150,
+                    opacity: 0.3,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    outModes: {
+                        default: "bounce"
+                    }
+                },
+                size: {
+                    value: 2
+                },
+                opacity: {
+                    value: 0.5
+                }
+            },
+            detectRetina: true
+        });
